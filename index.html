@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Clear View Maine — Window Washing</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0a1628;
+      --blue: #1a6bff;
+      --sky: #e8f4fd;
+      --white: #ffffff;
+      --gray: #6b7280;
+      --light: #f4f8ff;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--white);
+      color: var(--navy);
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 5%;
+      background: rgba(10, 22, 40, 0.95);
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.6rem;
+      color: var(--white);
+      letter-spacing: 2px;
+    }
+
+    .nav-logo span { color: var(--blue); }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--blue); }
+
+    .nav-cta {
+      background: var(--blue);
+      color: white !important;
+      padding: 0.5rem 1.2rem;
+      border-radius: 6px;
+      transition: background 0.2s !important;
+    }
+
+    .nav-cta:hover { background: #0052d4 !important; color: white !important; }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 0 5%;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(26,107,255,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -20%;
+      left: -5%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(26,107,255,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      max-width: 700px;
+      animation: fadeUp 0.8s ease forwards;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(26,107,255,0.15);
+      border: 1px solid rgba(26,107,255,0.4);
+      color: #6da8ff;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3.5rem, 8vw, 6.5rem);
+      color: var(--white);
+      line-height: 0.95;
+      letter-spacing: 2px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 span { color: var(--blue); }
+
+    .hero p {
+      color: rgba(255,255,255,0.65);
+      font-size: 1.15rem;
+      line-height: 1.7;
+      max-width: 500px;
+      margin-bottom: 2.5rem;
+      font-weight: 300;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--blue);
+      color: white;
+      padding: 0.9rem 2rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.2s, background 0.2s;
+      display: inline-block;
+    }
+
+    .btn-primary:hover { background: #0052d4; transform: translateY(-2px); }
+
+    .btn-secondary {
+      background: transparent;
+      color: white;
+      padding: 0.9rem 2rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 500;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.25);
+      transition: border-color 0.2s, transform 0.2s;
+      display: inline-block;
+    }
+
+    .btn-secondary:hover { border-color: var(--blue); transform: translateY(-2px); }
+
+    .hero-stats {
+      display: flex;
+      gap: 3rem;
+      margin-top: 4rem;
+      padding-top: 3rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .stat-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.5rem;
+      color: var(--blue);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.5);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 0.2rem;
+    }
+
+    /* SERVICES */
+    .services {
+      padding: 7rem 5%;
+      background: var(--light);
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      letter-spacing: 1px;
+      margin-bottom: 1rem;
+      color: var(--navy);
+    }
+
+    .section-sub {
+      color: var(--gray);
+      font-size: 1.05rem;
+      max-width: 500px;
+      line-height: 1.7;
+      margin-bottom: 3.5rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .service-card {
+      background: white;
+      border-radius: 16px;
+      padding: 2rem;
+      border: 1px solid rgba(26,107,255,0.1);
+      transition: transform 0.2s, box-shadow 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--blue);
+      transform: scaleX(0);
+      transition: transform 0.3s;
+      transform-origin: left;
+    }
+
+    .service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(26,107,255,0.12); }
+    .service-card:hover::before { transform: scaleX(1); }
+
+    .service-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .service-card h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .service-card p {
+      color: var(--gray);
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .service-price {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.8rem;
+      color: var(--blue);
+      letter-spacing: 1px;
+    }
+
+    .service-price span {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem;
+      color: var(--gray);
+      font-weight: 400;
+      letter-spacing: 0;
+    }
+
+    /* PROCESS */
+    .process {
+      padding: 7rem 5%;
+      background: var(--white);
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-top: 3.5rem;
+    }
+
+    .step {
+      text-align: center;
+      padding: 1.5rem;
+    }
+
+    .step-num {
+      width: 56px;
+      height: 56px;
+      background: var(--navy);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.4rem;
+      margin: 0 auto 1.2rem;
+    }
+
+    .step h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .step p {
+      color: var(--gray);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    /* GALLERY */
+    .gallery {
+      padding: 7rem 5%;
+      background: var(--light);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 3.5rem;
+    }
+
+    .gallery-placeholder {
+      aspect-ratio: 4/3;
+      background: linear-gradient(135deg, #dde8f8, #c5d8f5);
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #7a9cc4;
+      font-size: 0.85rem;
+      font-weight: 500;
+      gap: 0.5rem;
+      border: 2px dashed #b0cae8;
+    }
+
+    .gallery-placeholder span { font-size: 2rem; }
+
+    /* QUOTE FORM */
+    .quote {
+      padding: 7rem 5%;
+      background: var(--navy);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .quote::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(26,107,255,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .quote .section-title { color: white; }
+    .quote .section-sub { color: rgba(255,255,255,0.55); }
+
+    .quote-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      max-width: 700px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-group.full { grid-column: 1 / -1; }
+
+    .form-group label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 8px;
+      padding: 0.85rem 1rem;
+      color: white;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: rgba(255,255,255,0.3); }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--blue); }
+
+    .form-group select option { background: var(--navy); }
+
+    .form-group textarea { resize: vertical; min-height: 100px; }
+
+    .form-submit {
+      grid-column: 1 / -1;
+      background: var(--blue);
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+      font-family: 'DM Sans', sans-serif;
+      letter-spacing: 0.5px;
+    }
+
+    .form-submit:hover { background: #0052d4; transform: translateY(-2px); }
+
+    /* CONTACT */
+    .contact {
+      padding: 5rem 5%;
+      background: var(--white);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .contact h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      letter-spacing: 1px;
+    }
+
+    .contact-items { display: flex; flex-direction: column; gap: 1rem; }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      color: var(--gray);
+      font-size: 0.95rem;
+    }
+
+    .contact-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--light);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .contact-item a { color: var(--blue); text-decoration: none; }
+
+    .venmo-box {
+      background: var(--light);
+      border-radius: 12px;
+      padding: 1.5rem;
+      border: 1px solid rgba(26,107,255,0.1);
+    }
+
+    .venmo-box p {
+      font-size: 0.85rem;
+      color: var(--gray);
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .venmo-handle {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      color: var(--navy);
+      letter-spacing: 1px;
+    }
+
+    .venmo-note {
+      font-size: 0.8rem;
+      color: var(--gray);
+      margin-top: 0.3rem;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--navy);
+      padding: 2rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.3rem;
+      color: white;
+      letter-spacing: 2px;
+    }
+
+    .footer-logo span { color: var(--blue); }
+
+    footer p {
+      color: rgba(255,255,255,0.4);
+      font-size: 0.85rem;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hero-stats { gap: 1.5rem; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; }
+      .quote-form { grid-template-columns: 1fr; }
+      .contact { grid-template-columns: 1fr; gap: 2rem; }
+      footer { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">Clear View<span>Maine</span></div>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#process">How It Works</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#quote" class="nav-cta">Get a Quote</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">Serving Yarmouth & Surrounding Areas</div>
+      <h1>Spotless<br>Windows.<br><span>Every Time.</span></h1>
+      <p>Professional window washing for homes across Southern Maine. A dedicated team, transparent per-window pricing, and no surprises — just a clear view every time.</p>
+      <div class="hero-buttons">
+        <a href="#quote" class="btn-primary">Get a Free Quote</a>
+        <a href="#services" class="btn-secondary">View Pricing</a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="stat-num">100%</div>
+          <div class="stat-label">Satisfaction</div>
+        </div>
+        <div>
+          <div class="stat-num">$5+</div>
+          <div class="stat-label">Per Window</div>
+        </div>
+        <div>
+          <div class="stat-num">Local</div>
+          <div class="stat-label">Maine Based</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="section-label">What We Offer</div>
+    <div class="section-title">Simple, Fair Pricing</div>
+    <p class="section-sub">Every job is quoted per window — so you know exactly what you're paying for before we start.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🪟</div>
+        <h3>Exterior Only</h3>
+        <p>Outside surfaces cleaned to a streak-free shine. Perfect for a quick refresh.</p>
+        <div class="service-price">$5–8 <span>/ window</span></div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">✨</div>
+        <h3>Interior + Exterior</h3>
+        <p>Full inside and outside clean. The complete treatment for spotless results.</p>
+        <div class="service-price">$10–15 <span>/ window</span></div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔲</div>
+        <h3>French Pane Windows</h3>
+        <p>Multi-pane windows require extra care and time. Priced per pane.</p>
+        <div class="service-price">$8–12 <span>/ pane</span></div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🪟</div>
+        <h3>Large Windows</h3>
+        <p>Oversized windows (picture windows, floor-to-ceiling, etc.) are priced higher due to size and time.</p>
+        <div class="service-price">$10–15 <span>/ window</span></div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🧹</div>
+        <h3>Screens & Tracks</h3>
+        <p>Add-on cleaning for screens and window tracks for a truly complete finish.</p>
+        <div class="service-price">$3–5 <span>/ screen &nbsp;·&nbsp; $2–3 / track</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="process" id="process">
+    <div class="section-label">How It Works</div>
+    <div class="section-title">Easy From Start to Finish</div>
+    <p class="section-sub">Getting your windows cleaned should be effortless. Here's what to expect.</p>
+    <div class="process-steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h4>Request a Quote</h4>
+        <p>Fill out the form below or text/call. I'll schedule a free 15-minute walkthrough.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h4>Get Your Quote</h4>
+        <p>I count the windows on-site and send you an itemized quote on the spot. No surprises.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h4>We Get to Work</h4>
+        <p>Our team shows up on time, cleans every window thoroughly, and does a final walkthrough with you before we leave.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h4>Easy Payment</h4>
+        <p>Pay by Venmo, Apple Cash, or cash. Done. Enjoy your spotless windows.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery" id="gallery">
+    <div class="section-label">Our Work</div>
+    <div class="section-title">Before & After</div>
+    <p class="section-sub">Photos coming soon after our first jobs. Check back!</p>
+    <div class="gallery-grid">
+      <div class="gallery-placeholder"><span>📷</span>Before Photo</div>
+      <div class="gallery-placeholder"><span>✨</span>After Photo</div>
+      <div class="gallery-placeholder"><span>📷</span>Before Photo</div>
+      <div class="gallery-placeholder"><span>✨</span>After Photo</div>
+      <div class="gallery-placeholder"><span>📷</span>Before Photo</div>
+      <div class="gallery-placeholder"><span>✨</span>After Photo</div>
+    </div>
+  </section>
+
+  <!-- QUOTE FORM -->
+  <section class="quote" id="quote">
+    <div class="section-label" style="color:#6da8ff;">Request a Quote</div>
+    <div class="section-title">Let's Get Started</div>
+    <p class="section-sub">Fill this out and I'll get back to you within 24 hours to schedule a free walkthrough.</p>
+    <div class="quote-form">
+      <div class="form-group">
+        <label>First Name</label>
+        <input type="text" placeholder="John"/>
+      </div>
+      <div class="form-group">
+        <label>Last Name</label>
+        <input type="text" placeholder="Smith"/>
+      </div>
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input type="tel" placeholder="(207) 000-0000"/>
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" placeholder="john@email.com"/>
+      </div>
+      <div class="form-group full">
+        <label>Address</label>
+        <input type="text" placeholder="123 Main St, Yarmouth, ME 04096"/>
+      </div>
+      <div class="form-group full">
+        <label>Service Type</label>
+        <select>
+          <option value="">Select a service...</option>
+          <option>Exterior Only</option>
+          <option>Interior + Exterior</option>
+          <option>Unsure — just want a quote</option>
+        </select>
+      </div>
+      <div class="form-group full">
+        <label>Anything else?</label>
+        <textarea placeholder="e.g. large home, french pane windows, second story..."></textarea>
+      </div>
+      <button class="form-submit" onclick="alert('Thanks! Our team will be in touch within 24 hours.')">Request My Free Quote →</button>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div>
+      <div class="section-label">Get in Touch</div>
+      <h2>Reach Out Anytime</h2>
+      <div class="contact-items">
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <span><a href="tel:2074154512">(207) 415-4512</a></span>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">✉️</div>
+          <span><a href="/cdn-cgi/l/email-protection#fd9e959c8f9194988f888e8990928f8f948ebd9a909c9491d39e9290"><span class="__cf_email__" data-cfemail="d9bab1b8abb5b0bcabacaaadb4b6ababb0aa99beb4b8b0b5f7bab6b4">[email&#160;protected]</span></a></span>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <span>Yarmouth, Maine & Surrounding Areas</span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="venmo-box">
+        <p>Pay via Venmo</p>
+        <div class="venmo-handle"><a href="https://venmo.com/Charles-Morris-431" target="_blank" style="color:var(--navy);text-decoration:none;">@Charles-Morris-431</a></div>
+        <div class="venmo-note">Also accepts Apple Cash & Cash</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Clear View<span>Maine</span></div>
+    <p>© 2025 Charlie Morris · Yarmouth, ME</p>
+  </footer>
+
+</body>
+</html>
