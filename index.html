@@ -691,7 +691,42 @@
       <h3 style="color:white; font-size:1.5rem; margin-bottom:0.5rem;">You're all set!</h3>
       <p style="color:rgba(255,255,255,0.7); font-size:1rem;">We got your request and will be in touch within 24 hours to schedule your free walkthrough.</p>
     </div>
-    <a href="https://forms.gle/7SPyQ5dxmHuaENWS7" target="_blank" class="btn-primary" style="display:inline-block; font-size:1.1rem; padding:1rem 2.5rem;">Request My Free Quote →</a>
+    <form id="quote-form" class="quote-form" action="https://formspree.io/f/xyknyzpd" method="POST">
+      <div class="form-group">
+        <label>First Name</label>
+        <input type="text" name="first_name" placeholder="John" required/>
+      </div>
+      <div class="form-group">
+        <label>Last Name</label>
+        <input type="text" name="last_name" placeholder="Smith" required/>
+      </div>
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input type="tel" name="phone" placeholder="(207) 000-0000" required/>
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" name="email" placeholder="john@email.com" required/>
+      </div>
+      <div class="form-group full">
+        <label>Address</label>
+        <input type="text" name="address" placeholder="123 Main St, ME" required/>
+      </div>
+      <div class="form-group full">
+        <label>Service Type</label>
+        <select name="service">
+          <option value="">Select a service...</option>
+          <option>Exterior Only</option>
+          <option>Interior + Exterior</option>
+          <option>Unsure — just want a quote</option>
+        </select>
+      </div>
+      <div class="form-group full">
+        <label>Anything else?</label>
+        <textarea name="message" placeholder="e.g. large home, french pane windows, second story..."></textarea>
+      </div>
+      <button type="submit" class="form-submit">Request My Free Quote →</button>
+    </form>
   </section>
 
   <!-- CONTACT -->
@@ -706,7 +741,7 @@
         </div>
         <div class="contact-item">
           <div class="contact-icon">✉️</div>
-          <span><a href="mailto:charlierustmorris@gmail.com">charlierustmorris@gmail.com</a></span>
+          <span><a href="/cdn-cgi/l/email-protection#9cfff4fdeef0f5f9eee9efe8f1f3eeeef5efdcfbf1fdf5f0b2fff3f1"><span class="__cf_email__" data-cfemail="04676c6576686d6176717770696b76766d77446369656d682a676b69">[email&#160;protected]</span></a></span>
         </div>
         <div class="contact-item">
           <div class="contact-icon">📍</div>
@@ -729,22 +764,10 @@
     <p>© 2025 Charlie Morris · Yarmouth, ME</p>
   </footer>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     const form = document.getElementById('quote-form');
     form.addEventListener('submit', async function(e) {
       e.preventDefault();
       const data = new FormData(form);
       const response = await fetch(form.action, {
         method: 'POST',
-        body: data,
-        headers: { 'Accept': 'application/json' }
-      });
-      if (response.ok) {
-        form.style.display = 'none';
-        document.getElementById('form-success').style.display = 'block';
-      }
-    });
-  </script>
-
-</body>
-</html>
