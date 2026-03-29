@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Clear View Maine — Window Washing</title>
+  <title>Clear View Maine — Professional Window Washing</title>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -35,8 +35,9 @@
       justify-content: space-between;
       align-items: center;
       padding: 1.2rem 5%;
-      background: rgba(10, 22, 40, 0.95);
+      background: rgba(10, 22, 40, 0.97);
       backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
     }
 
     .nav-logo {
@@ -52,21 +53,22 @@
       display: flex;
       gap: 2rem;
       list-style: none;
+      align-items: center;
     }
 
     .nav-links a {
-      color: rgba(255,255,255,0.8);
+      color: rgba(255,255,255,0.75);
       text-decoration: none;
-      font-size: 0.9rem;
+      font-size: 0.875rem;
       font-weight: 500;
       letter-spacing: 0.5px;
       transition: color 0.2s;
     }
 
-    .nav-links a:hover { color: var(--blue); }
+    .nav-links a:hover { color: var(--white); }
 
     .nav-cta {
-      background: var(--blue);
+      background: var(--blue) !important;
       color: white !important;
       padding: 0.5rem 1.2rem;
       border-radius: 6px;
@@ -93,7 +95,7 @@
       right: -10%;
       width: 700px;
       height: 700px;
-      background: radial-gradient(circle, rgba(26,107,255,0.15) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(26,107,255,0.13) 0%, transparent 70%);
       pointer-events: none;
     }
 
@@ -104,7 +106,7 @@
       left: -5%;
       width: 500px;
       height: 500px;
-      background: radial-gradient(circle, rgba(26,107,255,0.08) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(26,107,255,0.07) 0%, transparent 70%);
       pointer-events: none;
     }
 
@@ -120,12 +122,12 @@
 
     .hero-badge {
       display: inline-block;
-      background: rgba(26,107,255,0.15);
-      border: 1px solid rgba(26,107,255,0.4);
+      background: rgba(26,107,255,0.12);
+      border: 1px solid rgba(26,107,255,0.35);
       color: #6da8ff;
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       font-weight: 600;
-      letter-spacing: 2px;
+      letter-spacing: 2.5px;
       text-transform: uppercase;
       padding: 0.4rem 1rem;
       border-radius: 50px;
@@ -144,9 +146,9 @@
     .hero h1 span { color: var(--blue); }
 
     .hero p {
-      color: rgba(255,255,255,0.65);
-      font-size: 1.15rem;
-      line-height: 1.7;
+      color: rgba(255,255,255,0.6);
+      font-size: 1.1rem;
+      line-height: 1.75;
       max-width: 500px;
       margin-bottom: 2.5rem;
       font-weight: 300;
@@ -163,11 +165,12 @@
       color: white;
       padding: 0.9rem 2rem;
       border-radius: 8px;
-      font-size: 1rem;
+      font-size: 0.95rem;
       font-weight: 600;
       text-decoration: none;
       transition: transform 0.2s, background 0.2s;
       display: inline-block;
+      letter-spacing: 0.3px;
     }
 
     .btn-primary:hover { background: #0052d4; transform: translateY(-2px); }
@@ -177,22 +180,22 @@
       color: white;
       padding: 0.9rem 2rem;
       border-radius: 8px;
-      font-size: 1rem;
+      font-size: 0.95rem;
       font-weight: 500;
       text-decoration: none;
-      border: 1px solid rgba(255,255,255,0.25);
+      border: 1px solid rgba(255,255,255,0.2);
       transition: border-color 0.2s, transform 0.2s;
       display: inline-block;
     }
 
-    .btn-secondary:hover { border-color: var(--blue); transform: translateY(-2px); }
+    .btn-secondary:hover { border-color: rgba(255,255,255,0.5); transform: translateY(-2px); }
 
     .hero-stats {
       display: flex;
       gap: 3rem;
       margin-top: 4rem;
       padding-top: 3rem;
-      border-top: 1px solid rgba(255,255,255,0.08);
+      border-top: 1px solid rgba(255,255,255,0.07);
     }
 
     .stat-num {
@@ -203,26 +206,21 @@
     }
 
     .stat-label {
-      font-size: 0.8rem;
-      color: rgba(255,255,255,0.5);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-top: 0.2rem;
-    }
-
-    /* SERVICES */
-    .services {
-      padding: 7rem 5%;
-      background: var(--light);
-    }
-
-    .section-label {
       font-size: 0.75rem;
+      color: rgba(255,255,255,0.45);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-top: 0.3rem;
+    }
+
+    /* SECTION SHARED */
+    .section-label {
+      font-size: 0.7rem;
       font-weight: 700;
       letter-spacing: 3px;
       text-transform: uppercase;
       color: var(--blue);
-      margin-bottom: 1rem;
+      margin-bottom: 0.75rem;
     }
 
     .section-title {
@@ -235,10 +233,16 @@
 
     .section-sub {
       color: var(--gray);
-      font-size: 1.05rem;
-      max-width: 500px;
-      line-height: 1.7;
+      font-size: 1rem;
+      max-width: 520px;
+      line-height: 1.75;
       margin-bottom: 3.5rem;
+    }
+
+    /* SERVICES */
+    .services {
+      padding: 7rem 5%;
+      background: var(--light);
     }
 
     .services-grid {
@@ -249,9 +253,9 @@
 
     .service-card {
       background: white;
-      border-radius: 16px;
+      border-radius: 12px;
       padding: 2rem;
-      border: 1px solid rgba(26,107,255,0.1);
+      border: 1px solid rgba(0,0,0,0.07);
       transition: transform 0.2s, box-shadow 0.2s;
       position: relative;
       overflow: hidden;
@@ -268,37 +272,54 @@
       transform-origin: left;
     }
 
-    .service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(26,107,255,0.12); }
+    .service-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.08); }
     .service-card:hover::before { transform: scaleX(1); }
 
     .service-icon {
-      font-size: 2rem;
-      margin-bottom: 1rem;
+      width: 44px;
+      height: 44px;
+      background: var(--light);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .service-icon svg {
+      width: 22px;
+      height: 22px;
+      stroke: var(--blue);
+      fill: none;
+      stroke-width: 1.75;
+      stroke-linecap: round;
+      stroke-linejoin: round;
     }
 
     .service-card h3 {
-      font-size: 1.1rem;
+      font-size: 1rem;
       font-weight: 600;
       margin-bottom: 0.5rem;
+      color: var(--navy);
     }
 
     .service-card p {
       color: var(--gray);
-      font-size: 0.9rem;
-      line-height: 1.6;
-      margin-bottom: 1rem;
+      font-size: 0.875rem;
+      line-height: 1.65;
+      margin-bottom: 1.25rem;
     }
 
     .service-price {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.8rem;
+      font-size: 1.75rem;
       color: var(--blue);
       letter-spacing: 1px;
     }
 
     .service-price span {
       font-family: 'DM Sans', sans-serif;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       color: var(--gray);
       font-weight: 400;
       letter-spacing: 0;
@@ -315,6 +336,7 @@
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 2rem;
       margin-top: 3.5rem;
+      position: relative;
     }
 
     .step {
@@ -323,8 +345,8 @@
     }
 
     .step-num {
-      width: 56px;
-      height: 56px;
+      width: 52px;
+      height: 52px;
       background: var(--navy);
       color: white;
       border-radius: 50%;
@@ -332,20 +354,21 @@
       align-items: center;
       justify-content: center;
       font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       margin: 0 auto 1.2rem;
     }
 
     .step h4 {
-      font-size: 1rem;
+      font-size: 0.95rem;
       font-weight: 600;
       margin-bottom: 0.5rem;
+      color: var(--navy);
     }
 
     .step p {
       color: var(--gray);
-      font-size: 0.9rem;
-      line-height: 1.6;
+      font-size: 0.875rem;
+      line-height: 1.65;
     }
 
     /* GALLERY */
@@ -361,22 +384,101 @@
       margin-top: 3.5rem;
     }
 
+    .gallery-item {
+      aspect-ratio: 4/3;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #d0dff0;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .gallery-item:hover img { transform: scale(1.04); }
+
     .gallery-placeholder {
       aspect-ratio: 4/3;
-      background: linear-gradient(135deg, #dde8f8, #c5d8f5);
-      border-radius: 12px;
+      background: #e2ecf7;
+      border-radius: 10px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      color: #7a9cc4;
-      font-size: 0.85rem;
+      color: #8bafd1;
+      font-size: 0.8rem;
       font-weight: 500;
       gap: 0.5rem;
-      border: 2px dashed #b0cae8;
+      border: 1px dashed #b8d0e8;
     }
 
-    .gallery-placeholder span { font-size: 2rem; }
+    .gallery-placeholder svg {
+      width: 28px;
+      height: 28px;
+      stroke: #a0bdd8;
+      fill: none;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* SAFETY */
+    .safety {
+      padding: 7rem 5%;
+      background: var(--white);
+    }
+
+    .safety-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+      margin-top: 3.5rem;
+    }
+
+    .safety-card {
+      padding: 2rem;
+      border-radius: 12px;
+      border: 1px solid rgba(0,0,0,0.07);
+      background: var(--white);
+    }
+
+    .safety-card-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--navy);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .safety-card-icon svg {
+      width: 22px;
+      height: 22px;
+      stroke: white;
+      fill: none;
+      stroke-width: 1.75;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .safety-card h4 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--navy);
+    }
+
+    .safety-card p {
+      color: var(--gray);
+      font-size: 0.875rem;
+      line-height: 1.65;
+    }
 
     /* QUOTE FORM */
     .quote {
@@ -393,12 +495,13 @@
       right: -10%;
       width: 600px;
       height: 600px;
-      background: radial-gradient(circle, rgba(26,107,255,0.12) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(26,107,255,0.1) 0%, transparent 70%);
       pointer-events: none;
     }
 
+    .quote .section-label { color: #6da8ff; }
     .quote .section-title { color: white; }
-    .quote .section-sub { color: rgba(255,255,255,0.55); }
+    .quote .section-sub { color: rgba(255,255,255,0.5); }
 
     .quote-form {
       display: grid;
@@ -416,29 +519,29 @@
     .form-group.full { grid-column: 1 / -1; }
 
     .form-group label {
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       font-weight: 600;
-      letter-spacing: 1px;
+      letter-spacing: 1.2px;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.6);
+      color: rgba(255,255,255,0.5);
     }
 
     .form-group input,
     .form-group select,
     .form-group textarea {
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
       border-radius: 8px;
       padding: 0.85rem 1rem;
       color: white;
       font-family: 'DM Sans', sans-serif;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       outline: none;
       transition: border-color 0.2s;
     }
 
     .form-group input::placeholder,
-    .form-group textarea::placeholder { color: rgba(255,255,255,0.3); }
+    .form-group textarea::placeholder { color: rgba(255,255,255,0.25); }
 
     .form-group input:focus,
     .form-group select:focus,
@@ -455,7 +558,7 @@
       border: none;
       padding: 1rem 2rem;
       border-radius: 8px;
-      font-size: 1rem;
+      font-size: 0.95rem;
       font-weight: 600;
       cursor: pointer;
       transition: background 0.2s, transform 0.2s;
@@ -467,8 +570,8 @@
 
     /* CONTACT */
     .contact {
-      padding: 5rem 5%;
-      background: var(--white);
+      padding: 6rem 5%;
+      background: var(--light);
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 4rem;
@@ -489,36 +592,47 @@
       align-items: center;
       gap: 1rem;
       color: var(--gray);
-      font-size: 0.95rem;
+      font-size: 0.9rem;
     }
 
     .contact-icon {
       width: 40px;
       height: 40px;
-      background: var(--light);
+      background: var(--white);
       border-radius: 8px;
+      border: 1px solid rgba(0,0,0,0.07);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.1rem;
       flex-shrink: 0;
     }
 
+    .contact-icon svg {
+      width: 18px;
+      height: 18px;
+      stroke: var(--navy);
+      fill: none;
+      stroke-width: 1.75;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
     .contact-item a { color: var(--blue); text-decoration: none; }
+    .contact-item a:hover { text-decoration: underline; }
 
     .venmo-box {
-      background: var(--light);
+      background: var(--white);
       border-radius: 12px;
-      padding: 1.5rem;
-      border: 1px solid rgba(26,107,255,0.1);
+      padding: 1.75rem;
+      border: 1px solid rgba(0,0,0,0.07);
     }
 
     .venmo-box p {
-      font-size: 0.85rem;
+      font-size: 0.75rem;
       color: var(--gray);
       margin-bottom: 0.5rem;
       font-weight: 600;
-      letter-spacing: 1px;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
     }
 
@@ -532,32 +646,115 @@
     .venmo-note {
       font-size: 0.8rem;
       color: var(--gray);
-      margin-top: 0.3rem;
+      margin-top: 0.4rem;
+    }
+
+    /* TERMS */
+    .terms {
+      padding: 6rem 5%;
+      background: var(--white);
+    }
+
+    .terms-body {
+      max-width: 800px;
+      margin-top: 3rem;
+    }
+
+    .terms-section {
+      margin-bottom: 2.5rem;
+    }
+
+    .terms-section h3 {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid rgba(0,0,0,0.07);
+    }
+
+    .terms-section p {
+      color: var(--gray);
+      font-size: 0.875rem;
+      line-height: 1.8;
     }
 
     /* FOOTER */
     footer {
       background: var(--navy);
-      padding: 2rem 5%;
+      padding: 3rem 5% 2rem;
+    }
+
+    .footer-top {
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: flex-start;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
       flex-wrap: wrap;
-      gap: 1rem;
+      gap: 2rem;
     }
 
     .footer-logo {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.3rem;
+      font-size: 1.4rem;
       color: white;
       letter-spacing: 2px;
     }
 
     .footer-logo span { color: var(--blue); }
 
-    footer p {
+    .footer-tagline {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.35);
+      margin-top: 0.4rem;
+      letter-spacing: 0.3px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 3rem;
+    }
+
+    .footer-col h5 {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
       color: rgba(255,255,255,0.4);
-      font-size: 0.85rem;
+      margin-bottom: 1rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .footer-col a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      font-size: 0.875rem;
+      transition: color 0.2s;
+    }
+
+    .footer-col a:hover { color: white; }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 1.5rem;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .footer-bottom p {
+      color: rgba(255,255,255,0.3);
+      font-size: 0.8rem;
     }
 
     /* RESPONSIVE */
@@ -567,7 +764,13 @@
       .gallery-grid { grid-template-columns: 1fr 1fr; }
       .quote-form { grid-template-columns: 1fr; }
       .contact { grid-template-columns: 1fr; gap: 2rem; }
-      footer { flex-direction: column; text-align: center; }
+      .footer-top { flex-direction: column; }
+      .footer-links { flex-direction: column; gap: 1.5rem; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+
+    @media (max-width: 480px) {
+      .gallery-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -579,6 +782,7 @@
     <ul class="nav-links">
       <li><a href="#services">Services</a></li>
       <li><a href="#process">How It Works</a></li>
+      <li><a href="#safety">Safety</a></li>
       <li><a href="#quote" class="nav-cta">Get a Quote</a></li>
     </ul>
   </nav>
@@ -586,9 +790,9 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-content">
-      <div class="hero-badge">Serving Yarmouth & Surrounding Areas</div>
+      <div class="hero-badge">Serving Yarmouth &amp; Surrounding Areas</div>
       <h1>Spotless<br>Windows.<br><span>Every Time.</span></h1>
-      <p>Professional window washing for homes across Southern Maine. A dedicated team, transparent per-window pricing, and no surprises — just a clear view every time.</p>
+      <p>Professional window washing for homes across Southern Maine. Transparent per-window pricing, a careful and respectful team, and no surprises — just a clear view every time.</p>
       <div class="hero-buttons">
         <a href="#quote" class="btn-primary">Get a Free Quote</a>
         <a href="#services" class="btn-secondary">View Pricing</a>
@@ -596,7 +800,7 @@
       <div class="hero-stats">
         <div>
           <div class="stat-num">100%</div>
-          <div class="stat-label">Satisfaction</div>
+          <div class="stat-label">Satisfaction Guaranteed</div>
         </div>
         <div>
           <div class="stat-num">$5+</div>
@@ -616,36 +820,52 @@
     <div class="section-title">Simple, Fair Pricing</div>
     <p class="section-sub">Every job is quoted per window — so you know exactly what you're paying for before we start.</p>
     <div class="services-grid">
+
       <div class="service-card">
-        <div class="service-icon">🪟</div>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="12" y1="3" x2="12" y2="21"/><line x1="3" y1="12" x2="21" y2="12"/></svg>
+        </div>
         <h3>Exterior Only</h3>
-        <p>Outside surfaces cleaned to a streak-free shine. Perfect for a quick refresh.</p>
+        <p>Outside surfaces cleaned to a streak-free finish. Perfect for a seasonal refresh or pre-sale clean.</p>
         <div class="service-price">$5–8 <span>/ window</span></div>
       </div>
+
       <div class="service-card">
-        <div class="service-icon">✨</div>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="4" width="9" height="9" rx="1.5"/><rect x="13" y="4" width="9" height="9" rx="1.5"/><rect x="2" y="15" width="9" height="5" rx="1.5"/><rect x="13" y="15" width="9" height="5" rx="1.5"/></svg>
+        </div>
         <h3>Interior + Exterior</h3>
-        <p>Full inside and outside clean. The complete treatment for spotless results.</p>
+        <p>Full inside-and-outside clean. The complete treatment for truly spotless results throughout your home.</p>
         <div class="service-price">$10–15 <span>/ window</span></div>
       </div>
+
       <div class="service-card">
-        <div class="service-icon">🔲</div>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/></svg>
+        </div>
         <h3>French Pane Windows</h3>
-        <p>Multi-pane windows require extra care and time. Priced per pane.</p>
+        <p>Multi-pane windows require extra care and time. Each pane is cleaned individually for a precise finish.</p>
         <div class="service-price">$8–12 <span>/ pane</span></div>
       </div>
+
       <div class="service-card">
-        <div class="service-icon">🪟</div>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="12" y1="5" x2="12" y2="19"/><line x1="2" y1="12" x2="22" y2="12"/></svg>
+        </div>
         <h3>Large Windows</h3>
-        <p>Oversized windows (picture windows, floor-to-ceiling, etc.) are priced higher due to size and time.</p>
+        <p>Oversized windows — picture windows, floor-to-ceiling, bay windows — require additional time and effort.</p>
         <div class="service-price">$10–15 <span>/ window</span></div>
       </div>
+
       <div class="service-card">
-        <div class="service-icon">🧹</div>
-        <h3>Screens & Tracks</h3>
-        <p>Add-on cleaning for screens and window tracks for a truly complete finish.</p>
-        <div class="service-price">$3–5 <span>/ screen &nbsp;·&nbsp; $2–3 / track</span></div>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
+        </div>
+        <h3>Screens &amp; Tracks</h3>
+        <p>Add-on service for screens and window tracks. Removes built-up debris for a truly complete result.</p>
+        <div class="service-price">$3–5 <span>/ screen &nbsp;&middot;&nbsp; $2–3 / track</span></div>
       </div>
+
     </div>
   </section>
 
@@ -653,44 +873,120 @@
   <section class="process" id="process">
     <div class="section-label">How It Works</div>
     <div class="section-title">Easy From Start to Finish</div>
-    <p class="section-sub">Getting your windows cleaned should be effortless. Here's what to expect.</p>
+    <p class="section-sub">Getting your windows cleaned should be completely effortless. Here's exactly what to expect from your first contact to final payment.</p>
     <div class="process-steps">
       <div class="step">
         <div class="step-num">1</div>
         <h4>Request a Quote</h4>
-        <p>Fill out the form below or text/call. I'll schedule a free 15-minute walkthrough.</p>
+        <p>Fill out the form below or call or text directly. I'll schedule a free 15-minute on-site walkthrough at your convenience.</p>
       </div>
       <div class="step">
         <div class="step-num">2</div>
-        <h4>Get Your Quote</h4>
-        <p>I count the windows on-site and send you an itemized quote on the spot. No surprises.</p>
+        <h4>On-Site Assessment</h4>
+        <p>I walk the property, count every window, and note any special considerations. You receive an itemized quote on the spot — no estimates, no surprises.</p>
       </div>
       <div class="step">
         <div class="step-num">3</div>
-        <h4>We Get to Work</h4>
-        <p>Our team shows up on time, cleans every window thoroughly, and does a final walkthrough with you before we leave.</p>
+        <h4>Professional Cleaning</h4>
+        <p>We arrive on time, protect your property throughout the job, clean every window thoroughly, and complete a final walkthrough with you before leaving.</p>
       </div>
       <div class="step">
         <div class="step-num">4</div>
-        <h4>Easy Payment</h4>
-        <p>Pay by Venmo, Apple Cash, or cash. Done. Enjoy your spotless windows.</p>
+        <h4>Simple Payment</h4>
+        <p>Pay by Venmo, Apple Cash, or cash once you're completely satisfied. No invoices, no waiting, no hassle.</p>
       </div>
     </div>
   </section>
 
+  <!-- GALLERY -->
+  <section class="gallery" id="gallery">
+    <div class="section-label">Our Work</div>
+    <div class="section-title">Before &amp; After</div>
+    <p class="section-sub">Results speak for themselves. Photos from recent jobs across Yarmouth and the surrounding area.</p>
+    <div class="gallery-grid">
+      <div class="gallery-placeholder">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        Add photo here
+      </div>
+      <div class="gallery-placeholder">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        Add photo here
+      </div>
+      <div class="gallery-placeholder">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        Add photo here
+      </div>
+      <div class="gallery-placeholder">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        Add photo here
+      </div>
+      <div class="gallery-placeholder">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        Add photo here
+      </div>
+      <div class="gallery-placeholder">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        Add photo here
+      </div>
+    </div>
+  </section>
 
+  <!-- SAFETY -->
+  <section class="safety" id="safety">
+    <div class="section-label">Our Commitment</div>
+    <div class="section-title">Safety &amp; Standards</div>
+    <p class="section-sub">Every job is carried out with care for your property, your family, and our team. Here's what we hold ourselves to on every visit.</p>
+    <div class="safety-grid">
+
+      <div class="safety-card">
+        <div class="safety-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h4>Property Protection</h4>
+        <p>We use drop cloths and protective covers where needed to protect floors, sills, and surrounding surfaces. Your home is treated with the same care we'd give our own.</p>
+      </div>
+
+      <div class="safety-card">
+        <div class="safety-card-icon">
+          <svg viewBox="0 0 24 24"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+        </div>
+        <h4>Ladder &amp; Height Safety</h4>
+        <p>All ladder work follows established safety standards. Ladders are stabilized and properly positioned before use. We do not take risks with second-story or elevated work.</p>
+      </div>
+
+      <div class="safety-card">
+        <div class="safety-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <h4>Respectful &amp; Professional</h4>
+        <p>We keep your space tidy, communicate clearly throughout the job, and never leave without confirming you're satisfied. Punctuality and professionalism on every visit.</p>
+      </div>
+
+      <div class="safety-card">
+        <div class="safety-card-icon">
+          <svg viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        </div>
+        <h4>Satisfaction Guarantee</h4>
+        <p>If any window doesn't meet your standard, we come back and make it right — no charge. Your satisfaction is the only outcome we accept.</p>
+      </div>
+
+    </div>
+  </section>
 
   <!-- QUOTE FORM -->
   <section class="quote" id="quote">
-    <div class="section-label" style="color:#6da8ff;">Request a Quote</div>
+    <div class="section-label">Request a Quote</div>
     <div class="section-title">Let's Get Started</div>
-    <p class="section-sub">Fill this out and I'll get back to you within 24 hours to schedule a free walkthrough.</p>
+    <p class="section-sub">Fill this out and I'll get back to you within 24 hours to schedule your free on-site walkthrough.</p>
 
-    <div id="form-success" style="display:none; max-width:700px; background:rgba(26,107,255,0.15); border:1px solid rgba(26,107,255,0.4); border-radius:12px; padding:2rem; text-align:center;">
-      <div style="font-size:3rem; margin-bottom:1rem;">✅</div>
-      <h3 style="color:white; font-size:1.5rem; margin-bottom:0.5rem;">You're all set!</h3>
-      <p style="color:rgba(255,255,255,0.7); font-size:1rem;">We got your request and will be in touch within 24 hours to schedule your free walkthrough.</p>
+    <div id="form-success" style="display:none; max-width:700px; background:rgba(26,107,255,0.12); border:1px solid rgba(26,107,255,0.35); border-radius:12px; padding:2.5rem; text-align:center;">
+      <div style="width:52px;height:52px;background:rgba(26,107,255,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6da8ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <h3 style="color:white; font-size:1.4rem; margin-bottom:0.5rem; font-weight:600;">Request received.</h3>
+      <p style="color:rgba(255,255,255,0.6); font-size:0.95rem; line-height:1.7;">We'll be in touch within 24 hours to schedule your free walkthrough. In the meantime, feel free to call or text at <a href="tel:2074154512" style="color:#6da8ff;">(207) 415-4512</a>.</p>
     </div>
+
     <form id="quote-form" class="quote-form" action="https://formspree.io/f/xyknyzpd" method="POST">
       <div class="form-group">
         <label>First Name</label>
@@ -709,8 +1005,8 @@
         <input type="email" name="email" placeholder="john@email.com" required/>
       </div>
       <div class="form-group full">
-        <label>Address</label>
-        <input type="text" name="address" placeholder="123 Main St, ME" required/>
+        <label>Property Address</label>
+        <input type="text" name="address" placeholder="123 Main St, Yarmouth, ME" required/>
       </div>
       <div class="form-group full">
         <label>Service Type</label>
@@ -718,14 +1014,16 @@
           <option value="">Select a service...</option>
           <option>Exterior Only</option>
           <option>Interior + Exterior</option>
+          <option>French Pane Windows</option>
+          <option>Screens &amp; Tracks (Add-on)</option>
           <option>Unsure — just want a quote</option>
         </select>
       </div>
       <div class="form-group full">
-        <label>Anything else?</label>
-        <textarea name="message" placeholder="e.g. large home, french pane windows, second story..."></textarea>
+        <label>Additional Notes</label>
+        <textarea name="message" placeholder="e.g. large home, second-story windows, french panes, specific access notes..."></textarea>
       </div>
-      <button type="submit" class="form-submit">Request My Free Quote →</button>
+      <button type="submit" class="form-submit">Request My Free Quote</button>
     </form>
   </section>
 
@@ -736,38 +1034,141 @@
       <h2>Reach Out Anytime</h2>
       <div class="contact-items">
         <div class="contact-item">
-          <div class="contact-icon">📞</div>
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.35 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6 6l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
+          </div>
           <span><a href="tel:2074154512">(207) 415-4512</a></span>
         </div>
         <div class="contact-item">
-          <div class="contact-icon">✉️</div>
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
           <span><a href="mailto:charlierustmorris@gmail.com">charlierustmorris@gmail.com</a></span>
         </div>
         <div class="contact-item">
-          <div class="contact-icon">📍</div>
-          <span>Yarmouth, Maine & Surrounding Areas</span>
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <span>Yarmouth, Maine &amp; Surrounding Areas</span>
         </div>
       </div>
     </div>
     <div>
       <div class="venmo-box">
-        <p>Pay via Venmo</p>
-        <div class="venmo-handle"><a href="https://venmo.com/Charles-Morris-431" target="_blank" style="color:var(--navy);text-decoration:none;">@Charles-Morris-431</a></div>
-        <div class="venmo-note">Also accepts Apple Cash & Cash</div>
+        <p>Payment Accepted Via</p>
+        <div class="venmo-handle"><a href="https://venmo.com/Charles-Morris-431" target="_blank" rel="noopener noreferrer" style="color:var(--navy);text-decoration:none;">@Charles-Morris-431</a></div>
+        <div class="venmo-note">Also accepts Apple Cash and cash in person.</div>
       </div>
+    </div>
+  </section>
+
+  <!-- TERMS OF SERVICE -->
+  <section class="terms" id="terms">
+    <div class="section-label">Legal</div>
+    <div class="section-title">Terms of Service</div>
+    <div class="terms-body">
+
+      <div class="terms-section">
+        <h3>1. Services</h3>
+        <p>Clear View Maine provides residential window washing and related cleaning services in Yarmouth, Maine and surrounding areas. All services are performed by appointment only. The scope of each job is confirmed in writing via a quote prior to commencement of work.</p>
+      </div>
+
+      <div class="terms-section">
+        <h3>2. Quotes &amp; Pricing</h3>
+        <p>Quotes are provided at no charge following an on-site assessment. Pricing is based on window count, type, and service tier as outlined on this site. Final pricing is confirmed in writing before work begins and will not change unless additional work is requested by the customer.</p>
+      </div>
+
+      <div class="terms-section">
+        <h3>3. Scheduling &amp; Cancellation</h3>
+        <p>Appointments may be cancelled or rescheduled with at least 24 hours' notice at no cost. Cancellations made with less than 24 hours' notice may be subject to a rescheduling fee at our discretion. We reserve the right to reschedule due to weather conditions that make safe completion of work impossible.</p>
+      </div>
+
+      <div class="terms-section">
+        <h3>4. Access &amp; Property</h3>
+        <p>The customer is responsible for ensuring safe and clear access to all windows included in the agreed scope of work. Clear View Maine will take reasonable precautions to protect surrounding areas during the job. We are not responsible for damage resulting from pre-existing defects in windows, frames, seals, or surrounding surfaces.</p>
+      </div>
+
+      <div class="terms-section">
+        <h3>5. Satisfaction Guarantee</h3>
+        <p>If you are not satisfied with the result on any window, notify us before the team departs or within 24 hours of job completion. We will return to re-clean the affected window(s) at no additional charge. This guarantee does not apply to damage caused by pre-existing conditions or circumstances outside our control.</p>
+      </div>
+
+      <div class="terms-section">
+        <h3>6. Payment</h3>
+        <p>Payment is due upon completion of services. Accepted methods include Venmo, Apple Cash, and cash. By requesting services, you agree to pay the amount confirmed in your quote upon satisfactory completion of work.</p>
+      </div>
+
+      <div class="terms-section">
+        <h3>7. Limitation of Liability</h3>
+        <p>Clear View Maine's liability for any claim arising from services rendered shall not exceed the total amount paid for the specific job in question. We are not liable for any indirect, incidental, or consequential damages.</p>
+      </div>
+
+      <div class="terms-section">
+        <h3>8. Contact</h3>
+        <p>Questions about these terms may be directed to Charlie Morris at <a href="mailto:charlierustmorris@gmail.com" style="color:var(--blue);">charlierustmorris@gmail.com</a> or by calling <a href="tel:2074154512" style="color:var(--blue);">(207) 415-4512</a>. These terms were last updated in 2025.</p>
+      </div>
+
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <div class="footer-logo">Clear View<span>Maine</span></div>
-    <p>© 2025 Charlie Morris · Yarmouth, ME</p>
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">Clear View<span>Maine</span></div>
+        <div class="footer-tagline">Professional window washing — Yarmouth, ME</div>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h5>Services</h5>
+          <ul>
+            <li><a href="#services">Exterior Only</a></li>
+            <li><a href="#services">Interior + Exterior</a></li>
+            <li><a href="#services">French Pane Windows</a></li>
+            <li><a href="#services">Screens &amp; Tracks</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="#process">How It Works</a></li>
+            <li><a href="#safety">Safety &amp; Standards</a></li>
+            <li><a href="#quote">Get a Quote</a></li>
+            <li><a href="#terms">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <ul>
+            <li><a href="tel:2074154512">(207) 415-4512</a></li>
+            <li><a href="mailto:charlierustmorris@gmail.com">charlierustmorris@gmail.com</a></li>
+            <li><a href="#contact">Yarmouth, ME</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Charlie Morris &middot; Clear View Maine. All rights reserved.</p>
+      <p><a href="#terms" style="color:rgba(255,255,255,0.3);text-decoration:none;">Terms of Service</a></p>
+    </div>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script>
     const form = document.getElementById('quote-form');
     form.addEventListener('submit', async function(e) {
       e.preventDefault();
       const data = new FormData(form);
       const response = await fetch(form.action, {
         method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (response.ok) {
+        form.style.display = 'none';
+        document.getElementById('form-success').style.display = 'block';
+      }
+    });
+  </script>
+
+</body>
+</html>
