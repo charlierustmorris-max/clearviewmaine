@@ -325,52 +325,6 @@
       letter-spacing: 0;
     }
 
-    /* PROCESS */
-    .process {
-      padding: 7rem 5%;
-      background: var(--white);
-    }
-
-    .process-steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-      margin-top: 3.5rem;
-      position: relative;
-    }
-
-    .step {
-      text-align: center;
-      padding: 1.5rem;
-    }
-
-    .step-num {
-      width: 52px;
-      height: 52px;
-      background: var(--navy);
-      color: white;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.3rem;
-      margin: 0 auto 1.2rem;
-    }
-
-    .step h4 {
-      font-size: 0.95rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-      color: var(--navy);
-    }
-
-    .step p {
-      color: var(--gray);
-      font-size: 0.875rem;
-      line-height: 1.65;
-    }
-
     /* GALLERY */
     .gallery {
       padding: 7rem 5%;
@@ -781,8 +735,8 @@
     <div class="nav-logo">Clear View<span>Maine</span></div>
     <ul class="nav-links">
       <li><a href="#services">Services</a></li>
-      <li><a href="#process">How It Works</a></li>
       <li><a href="#safety">Safety</a></li>
+      <li><a href="#terms">Terms of Service</a></li>
       <li><a href="#quote" class="nav-cta">Get a Quote</a></li>
     </ul>
   </nav>
@@ -823,20 +777,12 @@
 
       <div class="service-card">
         <div class="service-icon">
-          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="12" y1="3" x2="12" y2="21"/><line x1="3" y1="12" x2="21" y2="12"/></svg>
-        </div>
-        <h3>Exterior Only</h3>
-        <p>Outside surfaces cleaned to a streak-free finish. Perfect for a seasonal refresh or pre-sale clean.</p>
-        <div class="service-price">$5–8 <span>/ window</span></div>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon">
           <svg viewBox="0 0 24 24"><rect x="2" y="4" width="9" height="9" rx="1.5"/><rect x="13" y="4" width="9" height="9" rx="1.5"/><rect x="2" y="15" width="9" height="5" rx="1.5"/><rect x="13" y="15" width="9" height="5" rx="1.5"/></svg>
         </div>
         <h3>Interior + Exterior</h3>
         <p>Full inside-and-outside clean. The complete treatment for truly spotless results throughout your home.</p>
-        <div class="service-price">$10–15 <span>/ window</span></div>
+        <div class="service-price">$5–7
+           <span>/ window</span></div>
       </div>
 
       <div class="service-card">
@@ -947,17 +893,6 @@
         <input type="text" name="address" placeholder="123 Main St, Yarmouth, ME" required/>
       </div>
       <div class="form-group full">
-        <label>Service Type</label>
-        <select name="service">
-          <option value="">Select a service...</option>
-          <option>Exterior Only</option>
-          <option>Interior + Exterior</option>
-          <option>French Pane Windows</option>
-          <option>Screens &amp; Tracks (Add-on)</option>
-          <option>Unsure — just want a quote</option>
-        </select>
-      </div>
-      <div class="form-group full">
         <label>Additional Notes</label>
         <textarea name="message" placeholder="e.g. large home, second-story windows, french panes, specific access notes..."></textarea>
       </div>
@@ -1061,7 +996,6 @@
         <div class="footer-col">
           <h5>Services</h5>
           <ul>
-            <li><a href="#services">Exterior Only</a></li>
             <li><a href="#services">Interior + Exterior</a></li>
             <li><a href="#services">French Pane Windows</a></li>
             <li><a href="#services">Screens &amp; Tracks</a></li>
@@ -1070,7 +1004,6 @@
         <div class="footer-col">
           <h5>Company</h5>
           <ul>
-            <li><a href="#process">How It Works</a></li>
             <li><a href="#safety">Safety &amp; Standards</a></li>
             <li><a href="#quote">Get a Quote</a></li>
             <li><a href="#terms">Terms of Service</a></li>
