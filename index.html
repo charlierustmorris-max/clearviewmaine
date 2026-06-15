@@ -574,33 +574,41 @@
     .contact-item a { color: var(--blue); text-decoration: none; }
     .contact-item a:hover { text-decoration: underline; }
 
-    .venmo-box {
+    .payment-box {
       background: var(--white);
       border-radius: 12px;
       padding: 1.75rem;
       border: 1px solid rgba(0,0,0,0.07);
     }
 
-    .venmo-box p {
+    .payment-box p {
       font-size: 0.75rem;
       color: var(--gray);
-      margin-bottom: 0.5rem;
+      margin-bottom: 1rem;
       font-weight: 600;
       letter-spacing: 1.5px;
       text-transform: uppercase;
     }
 
-    .venmo-handle {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 2rem;
-      color: var(--navy);
-      letter-spacing: 1px;
+    .payment-methods {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem;
     }
 
-    .venmo-note {
-      font-size: 0.8rem;
-      color: var(--gray);
-      margin-top: 0.4rem;
+    .payment-method {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      color: var(--navy);
+      font-weight: 500;
+      padding: 0.6rem 0;
+    }
+
+    .payment-method::before {
+      content: '✓ ';
+      color: var(--blue);
+      font-weight: 700;
+      margin-right: 0.4rem;
     }
 
     /* TERMS */
@@ -718,6 +726,7 @@
       .gallery-grid { grid-template-columns: 1fr 1fr; }
       .quote-form { grid-template-columns: 1fr; }
       .contact { grid-template-columns: 1fr; gap: 2rem; }
+      .payment-methods { grid-template-columns: 1fr; }
       .footer-top { flex-direction: column; }
       .footer-links { flex-direction: column; gap: 1.5rem; }
       .footer-bottom { flex-direction: column; text-align: center; }
@@ -914,9 +923,9 @@
         </div>
         <div class="contact-item">
           <div class="contact-icon">
-            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
-          <span><a href="mailto:charlierustmorris@gmail.com">charlierustmorris@gmail.com</a></span>
+          <span>Fully Insured &amp; Licensed</span>
         </div>
         <div class="contact-item">
           <div class="contact-icon">
@@ -927,10 +936,15 @@
       </div>
     </div>
     <div>
-      <div class="venmo-box">
-        <p>Payment Accepted Via</p>
-        <div class="venmo-handle"><a href="https://venmo.com/Charles-Morris-431" target="_blank" rel="noopener noreferrer" style="color:var(--navy);text-decoration:none;">@Charles-Morris-431</a></div>
-        <div class="venmo-note">Also accepts Apple Cash, Wire, Check, and cash in person.</div>
+      <div class="payment-box">
+        <p>Payment Methods Accepted</p>
+        <div class="payment-methods">
+          <div class="payment-method">Venmo</div>
+          <div class="payment-method">Apple Cash</div>
+          <div class="payment-method">Wire Transfer</div>
+          <div class="payment-method">Check</div>
+          <div class="payment-method">Cash</div>
+        </div>
       </div>
     </div>
   </section>
@@ -968,7 +982,7 @@
 
       <div class="terms-section">
         <h3>6. Payment</h3>
-        <p>Payment is due upon completion of services. Accepted methods include Venmo, Apple Cash, Cash, Wire, And Check. By requesting services, you agree to pay the amount confirmed in your quote upon satisfactory completion of work.</p>
+        <p>Payment is due upon completion of services. Accepted methods include Venmo, Apple Cash, Wire Transfer, Check, and Cash. By requesting services, you agree to pay the amount confirmed in your quote upon satisfactory completion of work.</p>
       </div>
 
       <div class="terms-section">
@@ -978,8 +992,7 @@
 
       <div class="terms-section">
         <h3>8. Contact</h3>
-        <p>Questions about these terms may be directed to Charlie Morris at <a href="mailto:charlierustmorris@gmail.com" style="color:var(--blue);">charlierustmorris@gmail.com</a> or by calling <a href="tel:2074154512" style="color:var(--blue);">(207) 415-4512</a>. These terms were last updated in March 2026
-          .</p>
+        <p>Questions about these terms may be directed to <a href="tel:2074154512" style="color:var(--blue);">(207) 415-4512</a>. These terms were last updated in June 2026.</p>
       </div>
 
     </div>
@@ -1013,14 +1026,14 @@
           <h5>Contact</h5>
           <ul>
             <li><a href="tel:2074154512">(207) 415-4512</a></li>
-            <li><a href="mailto:charlierustmorris@gmail.com">charlierustmorris@gmail.com</a></li>
+            <li><a href="#contact">Fully Insured & Licensed</a></li>
             <li><a href="#contact">Yarmouth, ME</a></li>
           </ul>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2025 Charlie Morris &middot; Clear View Maine. All rights reserved.</p>
+      <p>&copy; 2026 Charlie Morris &middot; Clear View Maine. All rights reserved.</p>
       <p><a href="#terms" style="color:rgba(255,255,255,0.3);text-decoration:none;">Terms of Service</a></p>
     </div>
   </footer>
@@ -1044,4 +1057,3 @@
 
 </body>
 </html>
-
